@@ -19,7 +19,6 @@ class spam(commands.Cog):
     def send_message_with_token(self, token, guild: discord.Guild):
         headers = {'Authorization': token}
         data = {'content': self.message}
-
         try:
             channel = guild.get_channel(self.channel_id)
             response = requests.post(f'https://discord.com/api/v9/channels/{self.channel_id}/messages', headers=headers, data=data,)
